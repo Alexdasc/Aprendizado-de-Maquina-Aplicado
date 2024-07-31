@@ -1,0 +1,69 @@
+## README
+
+# Análise Exploratória e Visualização de Dados
+
+Este projeto realiza uma análise exploratória e visualização de dados a partir de múltiplas fontes, incluindo arquivos CSV hospedados no Google Drive. O código permite o carregamento dos dados, tratamento de dados faltantes, visualização através de gráficos (histograma e gráfico de pizza), além de possibilitar uma análise especializada, onde é possível adicionar conclusões e insights personalizados.
+
+### Funcionalidades
+
+1. **Carregamento de Dados**: 
+   - A função `carregar_dados` permite carregar dados a partir de URLs do Google Drive ou URLs diretas para arquivos CSV.
+   - Para arquivos hospedados no Google Drive, é necessário fornecer o URL de compartilhamento. A função extrai o ID do arquivo e realiza o download para a leitura dos dados.
+
+2. **Tratamento de Dados Faltantes**:
+   - A função `tratar_dados_faltantes` identifica e remove linhas com dados faltantes do DataFrame.
+
+3. **Análise Exploratória**:
+   - A função `analise_exploratoria` exibe as primeiras linhas dos dados, informações sobre o DataFrame e estatísticas descritivas das variáveis numéricas.
+   - São gerados gráficos como histogramas e gráficos de pizza para visualizar a distribuição dos dados.
+
+4. **Visualização de Dados**:
+   - A função `plot_histograma` plota um histograma de uma variável numérica selecionada aleatoriamente.
+   - A função `plot_grafico_de_pizza` plota um gráfico de pizza de uma variável categórica selecionada aleatoriamente, se houver diversidade suficiente de valores.
+
+5. **Análise Especializada**:
+   - A função `analise_especialista` permite adicionar insights e conclusões personalizadas sobre os dados analisados.
+
+### Como Utilizar
+
+1. **Preparação do Ambiente**:
+   - Certifique-se de ter instalado as seguintes bibliotecas: `pandas`, `matplotlib`, `seaborn`, `requests`.
+
+2. **Execução**:
+   - Defina as URLs dos arquivos de dados no formato de compartilhamento do Google Drive ou URLs diretas de arquivos CSV.
+   - Execute a função `main(urls, save_fig=False)` onde `urls` é uma lista das URLs dos arquivos de dados. O parâmetro `save_fig` indica se os gráficos gerados devem ser salvos como arquivos PNG.
+
+3. **Salvamento de Gráficos**:
+   - Se o parâmetro `save_fig` for definido como `True`, os gráficos serão salvos no diretório corrente com nomes que indicam o tipo de gráfico e a variável correspondente.
+
+### Exemplo de Uso
+
+```python
+# URLs dos arquivos de dados
+urls = [
+    "https://drive.google.com/file/d/1ZkkHCvqgDzlnWXEm_7cZwZ68DvPc56SY/view?usp=sharing",
+    "https://drive.google.com/file/d/1ZlxdTXTbzs8R67BJVuH6JMyv2R3SluZO/view?usp=sharing",
+    "https://drive.google.com/file/d/1Zh_nRiNoIPl0tJD6ViRPaeuDdFqPygIh/view?usp=sharing",
+    "https://drive.google.com/file/d/1ZPJ1lw7O9NQ31JBJqSrt85eykvt6lAoq/view?usp=sharing"
+    # Adicione mais URLs aqui...
+]
+
+# Executar a análise de dados com a opção de salvar gráficos ativada
+main(urls, save_fig=True)
+```
+
+### Contribuição
+
+Sinta-se à vontade para contribuir com melhorias no código, adicionar novas funcionalidades ou corrigir bugs. Para contribuir, faça um fork deste repositório, crie uma branch para suas alterações e envie um pull request.
+
+### Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+### Contato
+
+Se tiver dúvidas ou sugestões, sinta-se à vontade para entrar em contato.
+
+---
+
+Esse README deve fornecer uma visão geral clara e informativa sobre como usar o projeto, suas funcionalidades e como contribuir.
